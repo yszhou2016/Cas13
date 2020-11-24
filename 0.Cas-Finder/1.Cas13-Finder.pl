@@ -1,6 +1,6 @@
 $file=$ARGV[0];
 ############################
-# run " perl  1.Cas13-Finder.pl   xxx.pep.cas.fasta"
+# run " perl  1.Cas13-Finder.pl   $sample.pep.cas.fasta"
 ############################
 $file2=$file;  $file2=~s/.fasta//;
 open(FASTA,"$file");
