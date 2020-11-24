@@ -1,7 +1,7 @@
 $file=$ARGV[0];  
 ################ 
-## 1. setup “prodigal.linux” and “pilercr” in the default environment
-## 2. run “perl  0.Cas-Finder  xxx.fasta ”
+## 1. setup “prodigal.linux” , "bedtools" and “pilercr” in the default environment
+## 2. run “perl  0.Cas-Finder  $sample.fasta ”
 ################ 
 
 
