@@ -1,7 +1,7 @@
 $FileCount=$ARGV[0];    #  Output file of HTSeq-count
 $FileGtf=$ARGV[1];      #  /home/yszhou/data/genome/GRCh38-ensembl/Homo_sapiens.GRCh38.96.chr.gtf   
 #################
-#example:  perl  OffTarget_gene.pl   $sample.HTSeq.out    Homo_sapiens.GRCh38.96.chr.gtf
+#example:  perl  HTSeq2FPKM.pl   $sample.HTSeq.out    Homo_sapiens.GRCh38.96.chr.gtf
 #################
 open(AA,"$FileGtf");
 open(BB,">tmp.exon.loc");
