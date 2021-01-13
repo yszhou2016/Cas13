@@ -35,6 +35,7 @@ perl  HTSeq2FPKM.pl   $sample.HTSeq.out    GRCh38.gtf
 4. Calculate differently expressed gene using DEseq2
 
 perl    ~/path/trinityrnaseq-Trinity-v2.8.5/Analysis/DifferentialExpression/run_DE_analysis.pl  --matrix gene_count_matrix.csv.xls  --method DESeq2  --output  DESeq2_out  --
+
 samples_file  sample.txt  --contrasts  contrast.txt   --dispersion 0.04
 
 perl  4.get_DEG-DESeq2.pl  gene_count_matrix.csv.xls.Control_vs_Treat.DESeq2.DE_results
@@ -47,6 +48,7 @@ perl  OffTarget_gene.pl   Spacer.Mismatch.fa   Hg38.gtf
 
 
 c. RNAseq off-target analysis of RNA base editor. 
+
 1.align the RNAseq to reference genome
 
 hisat2 -p 18 --dta-cufflinks  -q -x   GRCh38.genome.fa  -1   $sample\_1.clean.fq.gz  -2   $sample\_2.clean.fq.gz  -S  $sample.sam
