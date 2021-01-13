@@ -1,7 +1,7 @@
-$file=$ARGV[0];  
+$file=$ARGV[0];    # input a fasta file of genome/metagenome
 ################ 
 ## 1. setup “prodigal.linux” , "bedtools" and “pilercr” in the default environment
-## 2. run “perl  0.Cas-Finder  $sample.fasta ”
+## 2. example:  perl  0.Cas-Finder  $sample.fasta 
 ################ 
 
 
