@@ -1,5 +1,5 @@
 # This project is about mining Cas13 proteins from metagenomic data and RNA off-target detection of Cas13/Cas13-ADAR2dd.
-a.Identify the Cas13 proteins from metagenomic samples.
+a. Identify the Cas13 proteins from metagenomic samples.
 
 a.1. Install the “prodigal.linux” , "bedtools" and “pilercr” in the default environment.
 bedtools:  https://sourceforge.net/projects/bedtools/ 
@@ -28,7 +28,7 @@ b.2. Calculate the read counts.
 
 htseq-count -f bam  $sample.sorted.bam  GRCh38.gtf  >  $sample.HTSeq.out
 
-b.3.Convert the read counts into FPKM values.
+b.3. Convert the read counts into FPKM values.
 
 perl  HTSeq2FPKM.pl   $sample.HTSeq.out    GRCh38.gtf
 
@@ -49,13 +49,13 @@ perl  OffTarget_gene.pl   Spacer.Mismatch.fa   Hg38.gtf
 
 c. RNAseq off-target analysis of RNA base editor. 
 
-c.1.align the RNAseq to reference genome
+c.1. align the RNAseq to reference genome
 
 hisat2 -p 18 --dta-cufflinks  -q -x   GRCh38.genome.fa  -1   $sample\_1.clean.fq.gz  -2   $sample\_2.clean.fq.gz  -S  $sample.sam
 
 samtools view -Su  $sample.sam | samtools sort  -@ 18 - > $sample.sorted.bam
 
-c.2.Install the REDItool fom "https://sourceforge.net/projects/reditools/" .
+c.2. Install the REDItool fom "https://sourceforge.net/projects/reditools/" .
 
 python ~/software/anaconda3/envs/py2/bin/REDItoolDenovo.py  -o  $sample.REDtools -i $sample.sorted.bam  -f  GRCh38.genome.fa  -t 24 -e -d -l -U [AG,TC,CT,GA] -p -u -m60 -T5-5 -W -v 1 -n  0.0
 
