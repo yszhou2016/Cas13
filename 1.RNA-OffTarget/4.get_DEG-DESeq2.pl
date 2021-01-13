@@ -1,8 +1,8 @@
-$file=$ARGV[0];
-
-#### perl 4.get_DEG-DESeq2.pl  gene_count_matrix.csv.xls.Control_vs_Treat.DESeq2.DE_results
-
-open(FF,">DEG.xls");
+$file=$ARGV[0];     # output file of DESeq2
+########################################
+# example: perl 4.get_DEG-DESeq2.pl  gene_count_matrix.csv.xls.Control_vs_Treat.DESeq2.DE_results
+########################################
+open(FF,">DEG.list.xls");
 print FF "gene_ID\tlog2FC\t-log10(FDR)\tnone-up-down\tname\n";
 
 open(AA,"$file");
@@ -11,8 +11,8 @@ open(CC,">DEplot.$file");
 print BB "gene_ID\tlog2FC\t-log10(FDR)\tnone-up-down\tname\n";
 print CC "gene_ID\tgene1\tgene2\tnone-up-down\n";
 
-open(DD,">up.list");
-open(EE,">down.list");
+open(DD,">UP-regulated.list");
+open(EE,">Down-regulated.list");
 $line=<AA>;
 $s=0;
 while($line=<AA>)
