@@ -30,7 +30,7 @@ perl  HTSeq2FPKM.pl   $sample.HTSeq.out    GRCh38.gtf
 perl    ~/path/trinityrnaseq-Trinity-v2.8.5/Analysis/DifferentialExpression/run_DE_analysis.pl  --matrix gene_count_matrix.csv.xls  --method DESeq2  --output  DESeq2_out  --samples_file  sample.txt  --contrasts  contrast.txt   --dispersion 0.04
 perl  4.get_DEG-DESeq2.pl  gene_count_matrix.csv.xls.Control_vs_Treat.DESeq2.DE_results
 
-5. Predict the off-target site of Hg38 genome and transcriptome of the spacers with no more than eight mismatches.
+#5. Predict the off-target site of Hg38 genome and transcriptome of the spacers with no more than eight mismatches.
 perl  Mismatch-search.pl  Spacer.fa    Hg38.genome.fa    8
 perl  OffTarget_gene.pl   Spacer.Mismatch.fa   Hg38.gtf
 
@@ -40,6 +40,7 @@ c. RNAseq off-target analysis of RNA base editor.
 hisat2 -p 18 --dta-cufflinks  -q -x   GRCh38.genome.fa  -1   $sample\_1.clean.fq.gz  -2   $sample\_2.clean.fq.gz  -S  $sample.sam
 samtools view -Su  $sample.sam | samtools sort  -@ 18 - > $sample.sorted.bam
 
-2.Install the REDItool fom "https://sourceforge.net/projects/reditools/"
+2.Install the REDItool fom "https://sourceforge.net/projects/reditools/" .
+
 python ~/software/anaconda3/envs/py2/bin/REDItoolDenovo.py  -o  $sample.REDtools -i $sample.sorted.bam  -f  GRCh38.genome.fa  -t 24 -e -d -l -U [AG,TC,CT,GA] -p -u -m60 -T5-5 -W -v 1 -n  0.0
 
